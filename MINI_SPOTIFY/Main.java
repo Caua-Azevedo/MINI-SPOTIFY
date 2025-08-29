@@ -5,12 +5,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Catalogo catalogo = new Catalogo();
-        Usuario usuario1 = new Usuario("Caua", "caua@email.com");
-        Usuario usuario2 = new Usuario("Louhan", "louhan@email.com");
+        Usuario usuario1 = new Usuario("Caua", "caua@gmail.com");
+        Usuario usuario2 = new Usuario("Louhan", "louhan@gmail.com");
 
         try {
-            Musica musica1 = new Musica("Bohemian Rhapsody", "Queen", 354, Genero.ROCK);
-            Musica musica2 = new Musica("Hotel California", "Eagles", 390, Genero.ROCK);
+            Musica musica1 = new Musica("Back to Black", "Amy Whitehouse", 354, Genero.ROCK);
+            Musica musica2 = new Musica("Rollin", "Limp Bizkit", 390, Genero.ROCK);
             Musica musica3 = new Musica("Billie Jean", "Michael Jackson", 294, Genero.POP);
             Podcast podcast1 = new Podcast("Flow Podcast", "Igor 3K", 7200, Genero.OUTRO, "Episódio 100", "Igor 3K");
             Audiobook audiobook1 = new Audiobook("Sapiens", "Yuval Noah Harari", 36000, Genero.OUTRO, "Harari", 1);
@@ -21,7 +21,7 @@ public class Main {
             catalogo.adicionarMidia(podcast1);
             catalogo.adicionarMidia(audiobook1);
 
-            catalogo.adicionarMidia(new Musica("Bohemian Rhapsody", "Queen", 354, Genero.ROCK));
+            catalogo.adicionarMidia(new Musica("Back to Black", "Amy Whitehouse", 354, Genero.ROCK));
         } catch (MidiaJaExisteException e) {
             System.out.println("Erro ao adicionar mídia: " + e.getMessage());
         }
@@ -40,16 +40,16 @@ public class Main {
         }
 
         try {
-            Midia m1 = catalogo.buscarPorTitulo("Bohemian Rhapsody");
+            Midia m1 = catalogo.buscarPorTitulo("Back to Black");
             if (m1 != null) usuario1.adicionarMidiaNaPlaylist("Minhas Favoritas", m1);
 
             Midia m2 = catalogo.buscarPorTitulo("Billie Jean");
             if (m2 != null) usuario1.adicionarMidiaNaPlaylist("Minhas Favoritas", m2);
 
-            Midia m3 = catalogo.buscarPorTitulo("Bohemian Rhapsody");
+            Midia m3 = catalogo.buscarPorTitulo("Back to Black");
             if (m3 != null) usuario1.adicionarMidiaNaPlaylist("Rock Clássico", m3);
 
-            Midia m4 = catalogo.buscarPorTitulo("Hotel California");
+            Midia m4 = catalogo.buscarPorTitulo("Rollin");
             if (m4 != null) usuario1.adicionarMidiaNaPlaylist("Rock Clássico", m4);
 
             Midia m5 = catalogo.buscarPorTitulo("Flow Podcast");
@@ -98,17 +98,17 @@ public class Main {
         usuario1.visualizarPlaylists();
 
         System.out.println("\n--- Buscas no Catálogo ---");
-        Midia buscaTitulo = catalogo.buscarPorTitulo("Hotel California");
+        Midia buscaTitulo = catalogo.buscarPorTitulo("Rollin");
         if (buscaTitulo != null) {
-            System.out.println("Busca por Título 'Hotel California': " + buscaTitulo.getInfo());
+            System.out.println("Busca por Título 'Rollin': " + buscaTitulo.getInfo());
         } else {
-            System.out.println("Mídia 'Hotel California' não encontrada.");
+            System.out.println("Mídia 'Rollin' não encontrada.");
         }
 
-        List<Midia> buscaArtista = catalogo.buscarPorArtista("Queen");
-        System.out.println("Busca por Artista 'Queen':");
+        List<Midia> buscaArtista = catalogo.buscarPorArtista("Amy Whitehouse");
+        System.out.println("Busca por Artista 'Amy Whitehouse':");
         if (buscaArtista.isEmpty()) {
-            System.out.println("  Nenhuma mídia encontrada para 'Queen'.");
+            System.out.println("  Nenhuma mídia encontrada para 'Amy Whitehouse'.");
         } else {
             for (Midia midia : buscaArtista) {
                 System.out.println("  - " + midia.getInfo());
