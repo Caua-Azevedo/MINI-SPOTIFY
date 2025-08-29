@@ -5,8 +5,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Catalogo catalogo = new Catalogo();
-        Usuario usuario1 = new Usuario("Alice", "alice@email.com");
-        Usuario usuario2 = new Usuario("Bob", "bob@email.com");
+        Usuario usuario1 = new Usuario("Caua", "caua@email.com");
+        Usuario usuario2 = new Usuario("Louhan", "louhan@email.com");
 
         try {
             Musica musica1 = new Musica("Bohemian Rhapsody", "Queen", 354, Genero.ROCK);
@@ -69,10 +69,10 @@ public class Main {
             System.out.println("Erro ao adicionar mídia à playlist: " + e.getMessage());
         }
 
-        System.out.println("\n--- Playlists de Alice ---");
+        System.out.println("\n--- Playlists de Caua ---");
         usuario1.visualizarPlaylists();
 
-        System.out.println("\n--- Playlists de Bob ---");
+        System.out.println("\n--- Playlists de Louhan ---");
         usuario2.visualizarPlaylists();
 
         try {
@@ -94,7 +94,7 @@ public class Main {
             System.out.println("Erro ao remover mídia da playlist: " + e.getMessage());
         }
 
-        System.out.println("\n--- Playlists de Alice (Após remoção) ---");
+        System.out.println("\n--- Playlists de Caua (Após remoção) ---");
         usuario1.visualizarPlaylists();
 
         System.out.println("\n--- Buscas no Catálogo ---");
