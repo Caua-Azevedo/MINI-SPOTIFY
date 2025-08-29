@@ -5,8 +5,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Catalogo catalogo = new Catalogo();
-        Usuario usuario1 = new Usuario("Caua", "caua@gmail.com");
-        Usuario usuario2 = new Usuario("Louhan", "louhan@gmail.com");
+        Usuario usuario1 = new Usuario("Caua", "caua@email.com");
+        Usuario usuario2 = new Usuario("Louhan", "louhan@email.com");
 
         try {
             Musica musica1 = new Musica("Back to Black", "Amy Whitehouse", 354, Genero.ROCK);
